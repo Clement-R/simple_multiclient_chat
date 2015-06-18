@@ -2,9 +2,11 @@ package com.company;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Scanner;
 
-class TCPClientChat {
+class TCPClientChat implements Observer {
     public static void main() throws IOException, ClassNotFoundException {
         // Connect to the system
         Socket communicationSocket = new Socket("localhost", 8100);
@@ -38,5 +40,20 @@ class TCPClientChat {
             username = msg.getUsername();
             System.out.println(username + " : " + received_message);
         }
+    }
+
+    @Override
+    public void update(Observable obs, Object obj) {
+        // Get response from server and display last message
+
+        /*
+        if(obs instanceof TCPServerChat){
+            Message msg = (Message) ois.readObject();
+        }
+        */
+        /*Message msg = (Message) ois.readObject();
+        String received_message = msg.getMessage();
+        username = msg.getUsername();
+        System.out.println(username + " : " + received_message);*/
     }
 }

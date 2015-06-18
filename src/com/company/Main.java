@@ -21,3 +21,11 @@ public class Main {
         }
     }
 }
+
+
+/*
+* How to implement observer pattern for displaying messages when they are send by the server
+*
+http://blog.netapsys.fr/pratiquer-le-design-pattern-observer-en-15-min/
+*
+* */

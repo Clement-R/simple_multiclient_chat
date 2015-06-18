@@ -3,10 +3,13 @@ package com.company;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Observable;
 
-class TCPServerChat {
-    public static void main() throws IOException {
+class TCPServerChat extends Observable {
+    public void main() throws IOException {
         ServerSocket server = new ServerSocket(8100);
+        final ArrayList<ObjectOutputStream> clientList = new ArrayList<>();
 
         while(true) {
             // Wait for a client
@@ -19,6 +22,8 @@ class TCPServerChat {
 
             OutputStream os = clientSocket.getOutputStream();
             final ObjectOutputStream oos = new ObjectOutputStream(os);
+            clientList.add(oos);
+            System.out.println(clientList);
 
             // Create and start thread that get user messages and display them
             Thread th = new Thread(new Runnable() {
@@ -34,8 +39,10 @@ class TCPServerChat {
 
                             // Send message to client
                             Message messageObject = new Message(username, message_received);
-                            oos.writeObject(messageObject);
-
+                            // notifyObservers(messageObject);
+                            for(ObjectOutputStream oos : clientList) {
+                                oos.writeObject(messageObject);
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         } catch (ClassNotFoundException e) {
