@@ -16,7 +16,9 @@ class TCPClientChat {
         String username = sc.nextLine();
 
         OutputStream os = communicationSocket.getOutputStream();
+        os.flush();
         ObjectOutputStream oos = new ObjectOutputStream(os);
+        oos.flush();
 
         InputStream is = communicationSocket.getInputStream();
         ObjectInputStream ois = new ObjectInputStream(is);
@@ -24,6 +26,7 @@ class TCPClientChat {
         while(true) {
             // Ask the client for a message
             System.out.println("Write your message :");
+            sc = new Scanner(System.in);
             String message = sc.nextLine();
 
             // Send message

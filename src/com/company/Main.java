@@ -12,7 +12,7 @@ public class Main {
 
     private static final String EXIT = "exit";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         System.out.println("Server : 0");
         System.out.println("Client : 1");
         Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class Main {
             TCPServerChat server = new TCPServerChat();
             server.main();
         } else if (Integer.parseInt(saisie) == 1) {
-            TCPClient client = new TCPClient();
+            TCPClientChat client = new TCPClientChat();
             client.main();
         }
     }

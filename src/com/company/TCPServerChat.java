@@ -14,13 +14,11 @@ class TCPServerChat {
             final Socket clientSocket = server.accept();
             System.out.println("One client just connect");
 
+            InputStream is = clientSocket.getInputStream();
+            final ObjectInputStream ois = new ObjectInputStream(is);
+
             OutputStream os = clientSocket.getOutputStream();
             final ObjectOutputStream oos = new ObjectOutputStream(os);
-
-            InputStream is = clientSocket.getInputStream();
-            System.out.println(is);
-            /* ERREUR this line is generating corrupted header error */
-            final ObjectInputStream ois = new ObjectInputStream(is);
 
             Thread th = new Thread(new Runnable() {
                 @Override
@@ -32,12 +30,8 @@ class TCPServerChat {
                             Message msg = (Message) ois.readObject();
                             String message_received = msg.getMessage();
                             String username = msg.getUsername();
-                            System.out.println(username);
-                            System.out.println(message_received);
+
                             // Send message to client
-                            /* TODO
-                                Broadcast
-                             */
                             Message messageObject = new Message(username, message_received);
                             oos.writeObject(messageObject);
 
