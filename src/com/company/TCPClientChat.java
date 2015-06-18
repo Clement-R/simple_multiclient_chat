@@ -15,10 +15,9 @@ class TCPClientChat {
         System.out.println("Username :");
         String username = sc.nextLine();
 
+        // Create streams objects
         OutputStream os = communicationSocket.getOutputStream();
-        os.flush();
         ObjectOutputStream oos = new ObjectOutputStream(os);
-        oos.flush();
 
         InputStream is = communicationSocket.getInputStream();
         ObjectInputStream ois = new ObjectInputStream(is);
@@ -33,7 +32,7 @@ class TCPClientChat {
             Message messageObject = new Message(username, message);
             oos.writeObject(messageObject);
 
-            // Get response from server
+            // Get response from server and display last message
             Message msg = (Message) ois.readObject();
             String received_message = msg.getMessage();
             username = msg.getUsername();

@@ -3,7 +3,6 @@ package com.company;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Scanner;
 
 class TCPServerChat {
     public static void main() throws IOException {
@@ -14,12 +13,14 @@ class TCPServerChat {
             final Socket clientSocket = server.accept();
             System.out.println("One client just connect");
 
+            // Create streams objects
             InputStream is = clientSocket.getInputStream();
             final ObjectInputStream ois = new ObjectInputStream(is);
 
             OutputStream os = clientSocket.getOutputStream();
             final ObjectOutputStream oos = new ObjectOutputStream(os);
 
+            // Create and start thread that get user messages and display them
             Thread th = new Thread(new Runnable() {
                 @Override
                 public void run() {
