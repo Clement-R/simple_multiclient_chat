@@ -22,7 +22,7 @@ class TCPServerChat extends Observable {
             OutputStream os = clientSocket.getOutputStream();
             final ObjectOutputStream oos = new ObjectOutputStream(os);
 
-            Client client = new Client(oos, ois);
+            final Client client = new Client(oos, ois);
             addObserver(client);
 
             // Create and start thread that get user messages and display them
@@ -33,11 +33,7 @@ class TCPServerChat extends Observable {
 
                     while(true) {
                         try {
-                            /*
-                            TODO:
-                            - Change to use getter and setter of client class
-                            */
-                            Message msg = (Message) ois.readObject();
+                            Message msg = (Message) client.getOis().readObject();
                             String message_received = msg.getMessage();
                             String username = msg.getUsername();
 

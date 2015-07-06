@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df60554f-f5b0-4dbc-9658-5f5e6e4d777f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Main.java" afterPath="$PROJECT_DIR$/src/com/company/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/TCPClientChat.java" afterPath="$PROJECT_DIR$/src/com/company/TCPClientChat.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/TCPServerChat.java" afterPath="$PROJECT_DIR$/src/com/company/TCPServerChat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="communication_bas_niveau.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TCPClientChat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TCPClientChat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/TCPClientChat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27567568">
-              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#721#1580#0" expanded="true" />
@@ -72,15 +68,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TCPServerChat.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TCPServerChat.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/TCPServerChat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="55" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.37027028">
+              <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#964#2091#0" expanded="true" />
-                <element signature="e#2090#2091#0" expanded="true" />
+                <element signature="e#970#1935#0" expanded="true" />
+                <element signature="e#1934#1935#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,9 +106,9 @@
         <option value="$PROJECT_DIR$/src/com/company/TCPServer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Message.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/TCPServerChat.java" />
         <option value="$PROJECT_DIR$/src/com/company/Client.java" />
         <option value="$PROJECT_DIR$/src/com/company/TCPClientChat.java" />
+        <option value="$PROJECT_DIR$/src/com/company/TCPServerChat.java" />
       </list>
     </option>
   </component>
@@ -486,8 +482,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -528,8 +524,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -570,8 +566,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -612,8 +608,8 @@
           <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,8 +650,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -696,8 +692,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -799,14 +795,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/TCPServerChat.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/TCPClientChat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="55" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="55" />
+          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#964#2091#0" expanded="true" />
-            <element signature="e#2090#2091#0" expanded="true" />
+            <element signature="e#721#1580#0" expanded="true" />
+            <element signature="e#1579#1580#0" expanded="true" />
+            <element signature="e#1643#2396#0" expanded="true" />
+            <element signature="e#2395#2396#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,16 +825,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/TCPClientChat.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/TCPServerChat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27567568">
-          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.37027028">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#721#1580#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1643#2396#0" expanded="true" />
-            <element signature="e#2395#2396#0" expanded="true" />
+            <element signature="e#970#1935#0" expanded="true" />
+            <element signature="e#1934#1935#0" expanded="true" />
           </folding>
         </state>
       </provider>
