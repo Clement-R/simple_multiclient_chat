@@ -17,15 +17,8 @@ public class Main {
             server.main();
         } else if (Integer.parseInt(saisie) == 1) {
             TCPClientChat client = new TCPClientChat();
+
             client.main();
         }
     }
 }
-
-
-/*
-* How to implement observer pattern for displaying messages when they are send by the server
-*
-http://blog.netapsys.fr/pratiquer-le-design-pattern-observer-en-15-min/
-*
-* */

@@ -2,58 +2,70 @@ package com.company;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.Scanner;
 
-class TCPClientChat implements Observer {
-    public static void main() throws IOException, ClassNotFoundException {
+class TCPClientChat  {
+    private ObjectInputStream ois;
+    private Client client;
+
+    public void main() throws IOException, ClassNotFoundException {
         // Connect to the system
         Socket communicationSocket = new Socket("localhost", 8100);
         System.out.println("Connected !");
 
-        // Ask the client name
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Username :");
-        String username = sc.nextLine();
-
         // Create streams objects
         OutputStream os = communicationSocket.getOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(os);
+        final ObjectOutputStream oos = new ObjectOutputStream(os);
 
         InputStream is = communicationSocket.getInputStream();
-        ObjectInputStream ois = new ObjectInputStream(is);
+        final ObjectInputStream ois = new ObjectInputStream(is);
 
-        while(true) {
-            // Ask the client for a message
-            System.out.println("Write your message :");
-            sc = new Scanner(System.in);
-            String message = sc.nextLine();
+        Thread writer = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Ask the client name
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Username :");
+                String username = sc.nextLine();
 
-            // Send message
-            Message messageObject = new Message(username, message);
-            oos.writeObject(messageObject);
+                while(true) {
+                    // Ask the client for a message
+                    System.out.println("Write your message :");
+                    sc = new Scanner(System.in);
+                    String message = sc.nextLine();
 
-            // Get response from server and display last message
-            Message msg = (Message) ois.readObject();
-            String received_message = msg.getMessage();
-            username = msg.getUsername();
-            System.out.println(username + " : " + received_message);
-        }
-    }
+                    // Send message
+                    Message messageObject = new Message(username, message);
+                    try {
+                        oos.writeObject(messageObject);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        writer.start();
 
-    @Override
-    public void update(Observable obs, Object obj) {
-        // Get response from server and display last message
+        Thread reader = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while(true) {
+                    // Get response from server and display last message
+                    Message msg = null;
+                    try {
+                        msg = (Message) ois.readObject();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
 
-        /*
-        if(obs instanceof TCPServerChat){
-            Message msg = (Message) ois.readObject();
-        }
-        */
-        /*Message msg = (Message) ois.readObject();
-        String received_message = msg.getMessage();
-        username = msg.getUsername();
-        System.out.println(username + " : " + received_message);*/
+                    String received_message = msg.getMessage();
+                    String username = msg.getUsername();
+                    System.out.println(username + " : " + received_message);
+                }
+            }
+        });
+        reader.start();
     }
 }

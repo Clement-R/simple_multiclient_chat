@@ -9,7 +9,6 @@ import java.util.Observable;
 class TCPServerChat extends Observable {
     public void main() throws IOException {
         ServerSocket server = new ServerSocket(8100);
-        final ArrayList<ObjectOutputStream> clientList = new ArrayList<>();
 
         while(true) {
             // Wait for a client
@@ -22,8 +21,9 @@ class TCPServerChat extends Observable {
 
             OutputStream os = clientSocket.getOutputStream();
             final ObjectOutputStream oos = new ObjectOutputStream(os);
-            clientList.add(oos);
-            System.out.println(clientList);
+
+            Client client = new Client(oos, ois);
+            addObserver(client);
 
             // Create and start thread that get user messages and display them
             Thread th = new Thread(new Runnable() {
@@ -33,16 +33,18 @@ class TCPServerChat extends Observable {
 
                     while(true) {
                         try {
+                            /*
+                            TODO:
+                            - Change to use getter and setter of client class
+                            */
                             Message msg = (Message) ois.readObject();
                             String message_received = msg.getMessage();
                             String username = msg.getUsername();
 
-                            // Send message to client
+                            // Send message to all clients
                             Message messageObject = new Message(username, message_received);
-                            // notifyObservers(messageObject);
-                            for(ObjectOutputStream oos : clientList) {
-                                oos.writeObject(messageObject);
-                            }
+                            setChanged();
+                            notifyObservers(messageObject);
                         } catch (IOException e) {
                             e.printStackTrace();
                         } catch (ClassNotFoundException e) {
